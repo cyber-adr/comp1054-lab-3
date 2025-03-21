@@ -16,3 +16,26 @@ html {
 	width: 80%;
 	margin: 0 auto;
 }
+
+/* Hide the panels */
+#tabpanel1 {
+	display: none;
+}
+
+#tabpanel2 {
+	display: none;
+}
+
+#tabpanel3 {
+	display: none;
+}
+
+/* Remove list style bullet points */
+ul {
+	list-style: none;	
+}
+
+/* Make the items display horizontally */
+li {
+	display: inline;
+}
