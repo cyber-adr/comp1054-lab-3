@@ -19,7 +19,8 @@ html {
 
 /* Hide the panels */
 #tabpanel1 {
-	display: none;
+	/* Have this one show by default */
+	/* display: none; */
 }
 
 #tabpanel2 {
