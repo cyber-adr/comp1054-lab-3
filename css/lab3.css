@@ -1,42 +1,113 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 /* Box-sizing reset (https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/) */
 html {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
-*, *:before, *:after {
-	box-sizing: inherit;
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 html {
-	font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 #container {
-	width: 80%;
-	margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
 }
+/* Above CSS was provided */
+
+/* Style the tab list */
+/* NOTE PLEASE FORGIVE THE OVERUSE OF COMMENTS BUT IT WAS NECESSARY TO UNDERSTAND IT ALL */
+
+/* Make the tabs horizontal and have it touch the content below */
+.tabs ul {
+    display: flex; /* Make tabs horizontal instead of vertically */
+    list-style: none; /* Remove the ugly ass bullet points */
+    padding: 0; /* Make the tabs touch the content */
+    margin: 0;
+}
+
+/* Divide the tab sizes into the space given */
+.tabs li {
+    flex: 1; /* Make tabs take up equal space */
+    text-align: center; /* Center text */
+	border: 3px solid black; /* Add borders around list elements */
+	border-radius: 7px 7px 0 0; /* Black border wasn't following the rounded borders */
+	/* Haven't figured out how to prevent the double borders where they touch */
+}
+
+/* Style tab links */
+.tabs a {
+    display: block; /* Makes entire tab clickable */
+    padding: 10px 20px; /* Adds space inside the tab button */
+    text-decoration: none; /* Remove the ugly default underline */
+    background: #eee; /* Light gray background */
+    color: #201c1c; /* Dark gray text */
+    border-radius: 5px 5px 0 0; /* Rounds top left and top right, nothing on bottom corners */
+	transition: 2s; /* Add a transition that is way too long */
+}
+
+/* Change state when user is hovering a tab */
+.tabs a:hover,
+.tabs a:focus,
+.tabs a:active {
+    background: red; /* Added funny colour when it's hovered, focused, or clicked */
+	/* For some reason the focus only seems to work for mobile devices */
+    font-weight: bold; /* Bold when above states are true */
+}
+
+/* Hide the divs and make them pretty if they do display (JS is managing the rest) */
+[role="tabpanel"] {
+    display: none; /* Hide divs by default */
+    padding: 20px; /* Padding for div content */
+    background: #fff; /* Bright white background colour */
+    border: 3px solid black; /* Adds a border around the content */
+    border-top: none; /* Removes the top border to blend with the tabs */
+    border-radius: 0 0 5px 5px; /* Rounds the bottom right and left, nothing on top corners */
+}
+
+/* Display first tab by default */
+[role="tabpanel"]:first-of-type,
+[role="tabpanel"]:target {
+    display: block;
+}
+
+/* Helpful links */
+/* https://www.w3schools.com/howto/howto_js_tabs.asp */
+/* https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/:target */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transitions/Using_CSS_transitions */
+
+
+
+
+
+/* Old CSS (backup) */
 
 /* Hide the panels */
-#tabpanel1 {
-	/* Have this one show by default */
-	/* display: none; */
-}
+/* #tabpanel1 { */
+    /* Have this one show by default */
+    /* display: none; */
+/* } */
 
-#tabpanel2 {
-	display: none;
+/* #tabpanel2 {
+    display: none;
 }
 
 #tabpanel3 {
-	display: none;
-}
+    display: none;
+} */
 
 /* Remove list style bullet points */
-ul {
-	list-style: none;	
-}
+/* ul {
+    list-style: none;
+} */
 
 /* Make the items display horizontally */
-li {
+/* li {
 	display: inline;
-}
+} */
